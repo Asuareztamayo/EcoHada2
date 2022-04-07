@@ -76,3 +76,4 @@ function verRetoIndividual(){
         (mainIndividual.style.display = "block")
     }
 }
+
