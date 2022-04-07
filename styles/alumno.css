@@ -1,0 +1,95 @@
+:root{
+    --fondomain-- : #F5F2CD ;
+    --fondoheader-- :#9FC131;
+    --letras--: #005c53;
+    --fondotablas-- : #D6D58E;
+}
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
+
+/* Usado en todas las vistas */
+a{
+    text-decoration: none !important;
+    color: black !important;
+}
+
+.main{
+    background-color: var(--fondomain--);
+    height: 80vh;
+}
+
+.header{
+    background-color: var(--fondoheader--);
+}
+.footer{
+    background-color: var(--fondoheader--);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+}
+
+/* Vista principal */
+.dodo{
+    margin-top: 15%;
+}
+.personal{
+    margin-top: 18%;
+}
+
+/* Vista ver reto */
+.nomReto{
+    background-color: var(--fondoheader--);
+    border: solid 5px var(--letras--);
+}
+
+.descripcion{
+    border: solid 3px var(--letras--);
+    background-color: var(--fondotablas--);
+}
+
+.valorInsignia{
+    border-left: solid 5px var(--letras--);
+}
+
+.insignia{
+    border-bottom: solid 5px var(--letras--);
+}
+
+.docEntregar{
+    border: solid 5px var(--letras--);
+    background-color: var(--fondotablas--);
+    display: flex;
+    justify-content: center;
+    margin-top: 60%;
+    margin-bottom: 10%;
+}
+
+.btnEntrega{
+    border: solid 5px var(--letras--);
+    background-color: var(--fondotablas--);
+    margin-left: 30%;
+    width: 40%;
+    color: var(--letras--);
+}
+
+/* Vista retos voluntarios */
+.retoVoluntario{
+    border: solid 5px var(--letras--);
+    background-color: var(--fondotablas--);
+    margin: 2%;
+}
+
+.btnReto{
+    border: solid 2px var(--letras--);
+    background-color: var(--fondoheader--);
+    margin-left: 10px;
+}
+
+/* vista retos hechos */
+.retoHecho{
+    border: solid 5px var(--letras--);
+    background-color: var(--fondotablas--);
+}
+
+.imgreto{
+    border-left: solid 5px var(--letras--);
+}

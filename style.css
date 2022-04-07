@@ -1,0 +1,84 @@
+    @import url(styles/alumno.css);
+    @import url(styles/profesor.css);
+    @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
+
+    :root{
+        --fondomain-- : #F5F2CD ;
+        --fondoheader-- :#9FC131;
+        --letras--: #005c53;
+        --fondotablas-- : #D6D58E;
+    }
+a{
+    text-decoration: none !important;
+}
+
+    body {
+    background: url(img/EsVedra.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    }
+
+    .logoHada {
+    width: 20%;
+    margin-bottom: -2%;
+    margin-left: 10%;
+    }
+
+    .eslogan {
+    color: var(--fondoheader--);
+    font-size: medium;
+    margin-left: 3%;
+    }
+
+    .nombre {
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--letras--);
+    margin-left: 13%;
+    }
+
+    .ingreso {
+    margin-left: 40%;
+    margin-top: 15%;
+    }
+    .email {
+    border: solid 4px --letras--;
+    background-color: var(--fondomain--);
+    height: 40px;
+    padding: 5%;
+    }
+
+    .entrar {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: var(--fondomain--);
+    border: 5px solid --letras--;
+    border-radius: 0.6em;
+    color: black;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin: 20px;
+    padding: 1.2em 2.8em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    }
+    .entrar:hover,
+    .btn:focus {
+    color: var(--letras--);
+    outline: 0;
+    }
