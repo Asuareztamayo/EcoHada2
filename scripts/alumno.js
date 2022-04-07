@@ -1,3 +1,21 @@
+//funcion inicial para cargar datos
+let alumno;
+document.addEventListener("DOMContentLoaded", async function () {
+let id = sessionStorage.getItem("id");
+await fetch(`http://localhost:8080/alumno/find${id}`)
+.then(res => res.json())
+.catch(error => console.error('Error:', error))
+.then(response => {
+alumno = response});
+console.log(alumno);
+document.getElementById('nAlumno').innerHTML += " " + alumno.name;
+document.getElementById('xp').innerHTML = alumno.xp;
+sessionStorage.setItem("alumno", alumno);
+});
+//funcion inicial para cargar datos
+
+
+
 let principal = document.getElementById("home");
 let mainPrincipal = document.getElementById("principalAlumno");
 let mainRetos = document.getElementById("mainRetosActuales");
