@@ -1,5 +1,6 @@
 let alumno;
 let retosbd;
+let idReto = document.getElementById("idReto");
 let home = document.getElementById("home");
 let mainPrincipal = document.getElementById("principalAlumno");
 let mainRetos = document.getElementById("mainRetosActuales");
@@ -30,9 +31,6 @@ home.addEventListener("click", () => {
 irRetos.addEventListener("click", () => {
     verRetos();
 });
-// irVoluntarios.addEventListener("click", ()=>{
-//     verVoluntarios();
-// });
 irTerminados.addEventListener("click", () => {
     verRetosTerminados();
 });
@@ -145,14 +143,6 @@ function verRetos() {
     }
 }
 
-// function verVoluntarios(){
-//     if (mainPrincipal.style.display == "block") {
-//         (mainPrincipal.style.display = "none")
-//     }
-//     if (mainVoluntarios.style.display == "none") {
-//         (mainVoluntarios.style.display = "block")
-//     }
-// }
 
 function verRetosTerminados() {
     if (mainPrincipal.style.display == "block") {
@@ -163,13 +153,15 @@ function verRetosTerminados() {
     }
 }
 
-function verRetoIndividual() {
+function verRetoIndividual(id) {
     if (mainRetos.style.display == "block") {
         mainRetos.style.display = "none";
     }
     if (mainIndividual.style.display == "none") {
         mainIndividual.style.display = "block";
     }
+    idReto = tareas.id
+    console.log(idReto)
 }
 
 function footer() {
