@@ -13,7 +13,7 @@ a{
 
 .main{
     background-color: var(--fondomain--);
-    height: auto;
+    height: 80vh;
 }
 
 .header{
@@ -91,4 +91,10 @@ a{
 .imgreto{
     border-left: solid 5px var(--letras--);
     padding: 20px;
+}
+
+.tablaReto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

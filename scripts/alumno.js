@@ -7,7 +7,6 @@ let mainRetos = document.getElementById("mainRetosActuales");
 let mainIndividual = document.getElementById("mainRetoIndividual");
 let mainHecho = document.getElementById("mainRetosHechos");
 let irRetos = document.getElementById("retosActuales");
-// let irVoluntarios = document.getElementById("retosVoluntarios");
 let irTerminados = document.getElementById("retosCompletos");
 let consejos = [
     "Separa les escombraries.",
@@ -110,10 +109,10 @@ function verRetoAlumno() {
                     <div class="d-flex flex-row m-4 retoHecho">
                         <h3 class="col-8">${retosbd[i].text}</h3>
                         <div class="d-flex align-items-end m-2">
-                        <button onclick=verRetoIndividual(${retosbd[i].id})" class="btnReto"> + </button>
+                        <button onclick="verRetoIndividual(${retosbd[i].id})" class="btnReto"> + </button>
                     </div>
                     <div class="d-flex justify-content-end">
-                        <img src="${retosbd[i].insignea.img}" alt="Medalla"
+                        <img src="${retosbd[i].insignea.img}" alt="${retosbd[i].insignea.text}"
                         border="0">
                     </div>
                 </div>`;
@@ -154,15 +153,31 @@ function verRetosTerminados() {
     }
 }
 
-function verRetoIndividual(id) {
+function verRetoIndividual(idReto) {
     if (mainRetos.style.display == "block") {
         mainRetos.style.display = "none";
     }
     if (mainIndividual.style.display == "none") {
         mainIndividual.style.display = "block";
     }
-    idReto = tareas.id
     console.log(idReto)
+    document.getElementById("retoActual").innerHTML = `<div class="d-flex justify-content-center nomReto">
+    <h2>${idReto}</h2>
+</div>
+<div class="d-flex flex-row descripcion">
+    <div class="col-6">
+        <h4 class="m-1">${retosbd[idReto].text}</h4>
+    </div>
+    <div class="col-6 d-flex flex-column justify-content-center valorInsignia">
+        <div class="d-flex justify-content-center insignia">
+            <img src="${retosbd[idReto].insignea.img}" alt="${retosbd[idReto].insignea.text}"
+                border="0" class="mb-5">
+        </div>
+        <div class="d-flex justify-content-center">
+            <h1 class="mt-3">${retosbd[idReto].insignea.xp} Punts</h1>
+        </div>
+    </div>
+</div>`
 }
 
 function footer() {
