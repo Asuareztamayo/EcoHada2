@@ -166,15 +166,15 @@ function verRetoIndividual(idReto) {
 </div>
 <div class="d-flex flex-row descripcion">
     <div class="col-6">
-        <h4 class="m-1">${retosbd[idReto].text}</h4>
+        <h4 class="m-1">${retosbd[idReto -1].text}</h4>
     </div>
     <div class="col-6 d-flex flex-column justify-content-center valorInsignia">
         <div class="d-flex justify-content-center insignia">
-            <img src="${retosbd[idReto].insignea.img}" alt="${retosbd[idReto].insignea.text}"
+            <img src="${retosbd[idReto -1].insignea.img}" alt="${retosbd[idReto -1].insignea.text}"
                 border="0" class="mb-5">
         </div>
         <div class="d-flex justify-content-center">
-            <h1 class="mt-3">${retosbd[idReto].insignea.xp} Punts</h1>
+            <h1 class="mt-3">${retosbd[idReto-1].insignea.xp} Punts</h1>
         </div>
     </div>
 </div>`
