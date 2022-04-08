@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     sessionStorage.setItem("alumno", alumno);
     asignarlvl();
     verRetoAlumno();
+    insignias();
 });
 //funcion inicial para cargar datos
 
@@ -170,3 +171,65 @@ function footer() {
 }
 
 let cambioConsejo = setInterval(footer, 5000);
+
+// alumno insignias
+async function insignias(){
+    let arrayi = alumno.insigneas;
+    let insignias = [];
+    let oro = [];
+    let plata = [];
+    let bronce = [];
+    let countador = [0,0,0];
+    let ifaltante = ["https://ibb.co/r3cBHT7","https://ibb.co/x8k8fNL","https://ibb.co/W2dKQX8"];
+    await fetch("http://localhost:8080/insignia/findall")
+
+    .then(res => res.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => {
+    insignias = response});
+    for (let index = 0; index < insignias.length; index++) {
+        if(insignias[index].xp == 50){
+            countador[0] += 1;
+           }else if(insignias[index].xp == 30){
+            countador[1] += 1;
+           }else{
+            countador[2] += 1;
+           }   
+    }
+    console.log(countador);
+    console.log(bronce);
+    for (let index = 0; index < arrayi.length; index++) {
+       if(arrayi[index].xp == 50){
+        oro.push(arrayi[index].img);
+       }else if(arrayi[index].xp == 30){
+        plata.push(arrayi[index].img);
+       }else{
+        bronce.push(arrayi[index].img);
+       }
+        
+    }
+    for (let index = 0; index < 3 ; index++) {
+        let aux = 0;
+        if(index == 0){
+            aux = (countador[index] - oro.length);
+        }else if(index == 1){
+            aux = (countador[index] - plata.length);
+        }else {
+            aux = (countador[index] - bronce.length);
+        }
+        for (let index2 = 0; index2 < aux; index2++) {
+            if(index == 0){
+                oro.push(ifaltante[index]);
+            }else if(index == 1){
+                plata.push(ifaltante[index]);
+            }else {
+               bronce.push(ifaltante[index]); 
+            }
+            
+        }
+
+    }
+    console.log(oro);
+    console.log(plata);
+    console.log(bronce);
+}
