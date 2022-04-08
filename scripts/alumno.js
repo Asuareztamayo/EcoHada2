@@ -91,7 +91,7 @@ function asignarlvl() {
             document.getElementById(
                 "categoria"
             ).innerHTML += `<img style="width: 250px; height:300px;" src="${lvls[index]
-                }" alt="Lvl" border="0">
+            }" alt="Lvl" border="0">
                     <div class="d-flex flex-column">
                         <h3>${subt[index]}</h3>
                         <h5>Te faltan ${(index + 1) * 100 - 50 - alumno.xp
@@ -106,26 +106,22 @@ function asignarlvl() {
 function verRetoAlumno() {
     let retos = document.getElementById("retos");
     retosbd = alumno.tareas;
-    console.log(retosbd);
-    for (let i = 0; i < retosbd.lenght; i++) {
-        retos += `<div class="col-6">
+    for (let i = 0; i < retosbd.length; i++) {
+        retos.innerHTML += `<div class="col-10">
                     <div class="d-flex flex-row m-4 retoHecho">
                         <h3 class="col-8">${retosbd[i].text}</h3>
-                    <div class="col-4 d-flex justify-content-end imgreto">
-                    <img src="${retosbd[i].insignea.img}" alt="Medalla"
-                    border="0">
+                        <div class="d-flex align-items-end m-2">
+                        <button onclick=verRetoIndividual(${retosbd[i].id})" class="btnReto"> + </button>
                     </div>
-                    <div class="d-flex justify-content-end m-2">
-                        <button onclick=verRetoIndividual(${retosbd[i].id})" class="btnReto"> + Info</button>
+                    <div class="d-flex justify-content-end">
+                        <img src="${retosbd[i].insignea.img}" alt="Medalla"
+                        border="0">
                     </div>
                 </div>`;
     }
 }
 
 function irPrincipal() {
-    if (mainPrincipal.style.display == "none") {
-        mainPrincipal.style.display = "block";
-    }
     if (mainRetos.style.display == "block") {
         mainRetos.style.display = "none";
     }
@@ -134,6 +130,9 @@ function irPrincipal() {
     }
     if (mainHecho.style.display == "block") {
         mainHecho.style.display = "none";
+    }
+    if (mainPrincipal.style.display == "none") {
+        mainPrincipal.style.display = "block";
     }
 }
 
