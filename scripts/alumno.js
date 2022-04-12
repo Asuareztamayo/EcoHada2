@@ -12,7 +12,7 @@ let consejos = [
     "Separa les escombraries.",
     "Apaga els llums.",
     "Desendolla el que no s'estigui fent servir.",
-    "Tanca tancament les aixetes.",
+    "Tanca correctament les aixetes.",
     "Utilitza bosses reutilitzables.",
     "Utilitza bombetes LED.",
     "Reutilitza.",
@@ -22,6 +22,13 @@ let consejos = [
     "Utilitza el transport públic.",
     "Porta els medicaments caducats a la farmàcia.",
     "Aneu caminant sempre que pugueu.",
+    "Tanca la aixeta quan et rentis els dents.",
+    "Estableix un temps de dutxa.",
+    "Surt mes a donar una volta, utilitza menys la tecología.",
+    "Utilitza recipents de vidre, en comptes dels de plàstic.",
+    "No llencis qualsevol líquid pel desguàs, l'aigua es contamina molt fàcilment.",
+    "Si vas de passeig, recorda't d'emportar-te les restes.",
+    "Sabies que laigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
 ];
 
 home.addEventListener("click", () => {
