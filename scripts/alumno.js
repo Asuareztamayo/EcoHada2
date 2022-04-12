@@ -6,8 +6,10 @@ let mainPrincipal = document.getElementById("principalAlumno");
 let mainRetos = document.getElementById("mainRetosActuales");
 let mainIndividual = document.getElementById("mainRetoIndividual");
 let mainHecho = document.getElementById("mainRetosHechos");
+let mainJuego = document.getElementById("mainJuegoExtra");
 let irRetos = document.getElementById("retosActuales");
 let irTerminados = document.getElementById("retosCompletos");
+let retoVoluntario = document.getElementById("retosVoluntarios");
 let consejos = [
     "Separa les escombraries.",
     "Apaga els llums.",
@@ -40,6 +42,9 @@ irRetos.addEventListener("click", () => {
 irTerminados.addEventListener("click", () => {
     verRetosTerminados();
 });
+retoVoluntario.addEventListener("click", ()=>{
+    verRetoVoluntario();
+})
 // retoIndividual.addEventListener("click", () => {
 // //  verRetoIndividual();
 // });
@@ -127,19 +132,12 @@ function verRetoAlumno() {
 }
 
 function irPrincipal() {
-    if (mainRetos.style.display == "block") {
-        mainRetos.style.display = "none";
+    mainRetos.style.display = "none";
+    mainIndividual.style.display = "none";
+    mainHecho.style.display = "none";
+    mainJuego.style.display = "none";
+    mainPrincipal.style.display = "block";
     }
-    if (mainIndividual.style.display == "block") {
-        mainIndividual.style.display = "none";
-    }
-    if (mainHecho.style.display == "block") {
-        mainHecho.style.display = "none";
-    }
-    if (mainPrincipal.style.display == "none") {
-        mainPrincipal.style.display = "block";
-    }
-}
 
 function verRetos() {
     if (mainPrincipal.style.display == "block") {
@@ -149,7 +147,14 @@ function verRetos() {
         mainRetos.style.display = "block";
     }
 }
-
+function verRetoVoluntario(){
+    if (mainPrincipal.style.display == "block") {
+        mainPrincipal.style.display = "none";
+    }
+    if (mainJuego.style.display == "none") {
+        mainJuego.style.display = "block";
+    }
+}
 
 function verRetosTerminados() {
     if (mainPrincipal.style.display == "block") {
