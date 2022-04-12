@@ -1,43 +1,41 @@
-:root
-{
-    --fondomain--:#F5F2CD;
-    --fondoheader-- :#9FC131;
+:root {
+    --fondomain--: #F5F2CD;
+    --fondoheader--: #9FC131;
     --letras--: #005c53;
-    --fondotablas-- : #D6D58E;
+    --fondotablas--: #D6D58E;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
-header,footer
-{
-    background-color: var(--fondoheader--);
-}
 
-footer
-{
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-}
-
-a
-{
+a {
     text-decoration: none !important;
     color: black !important;
 }
 
-.main
-{
-    background-color: var(--fondomain--);
-    height: 80vh;
+.header {
+    background-color: var(--fondoheader--);
+    height: 12vh;
 }
 
-.logoR
-{
+.footer {
+    background-color: var(--fondoheader--);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 8vh;
+}
+
+
+.main {
+    background-color: var(--fondomain--);
+    min-height: 80vh;
+}
+
+.logoR {
     transform: scaleX(-1);
 }
 
-.grups
-{
+.grups {
     padding: 5% 37% 5% 37%;
     font-size: 20px;
     background-color: var(--fondoheader--);
@@ -45,31 +43,27 @@ a
     margin-top: 5%;
 }
 
-.grups:active
-{
+.grups:active {
     padding: 5% 37% 5% 37%;
     font-size: 20px;
     background-color: var(--letras--);
-    color:#ffffff;
+    color: #ffffff;
     border: 3px solid var(--letras--);
     margin-top: 5%;
 }
 
-.div1
-{
+.div1 {
     margin-top: 15%;
     margin-left: 10%;
 }
 
-.div2
-{
+.div2 {
     margin-top: 7%;
     margin-right: 10%;
     padding-left: 25%;
 }
 
-.cuadroInfo
-{
+.cuadroInfo {
     width: 40vh;
     height: 7vh;
     background-color: var(--fondoheader--);
@@ -79,82 +73,68 @@ a
     align-items: center;
 }
 
-.infoBotones
-{
+.infoBotones {
     margin-left: 15%;
     margin-right: 5%;
 }
 
-.botonG
-{
+.botonG {
     margin-left: 20%;
 }
 
-.icono
-{
+.icono {
     margin-left: 3px;
     margin-right: 3px;
 }
 
-.perf
-{
+.perf {
     height: 80vh;
     width: 150vh;
 }
 
-.cuadroAl
-{
+.cuadroAl {
     border: 3px solid black;
     margin-right: 2%;
     width: 17vh;
 }
 
-.sepa
-{
+.sepa {
     margin-left: 10%;
 }
 
-.alumns
-{
+.alumns {
     margin-top: 15%;
     margin-left: 5%;
 }
 
-.reptes
-{
+.reptes {
     margin-top: 15%;
     margin-left: 5%;
 }
 
-.listAl
-{
+.listAl {
     margin-top: 5%;
 }
 
-.listAl2
-{
+.listAl2 {
     padding-right: 25px;
 }
 
-.listAl3
-{
+.listAl3 {
     padding-right: 20px;
     padding-left: 20px;
 }
 
-.listAl4
-{
+.listAl4 {
     margin-top: 10%;
 }
 
-.aluNom
-{
+.aluNom {
     margin-top: 5%;
     margin-left: 5%;
 }
 
-.reto
-{
+.reto {
     width: 40vh;
     height: 16vh;
     background-color: var(--fondoheader--);
@@ -162,37 +142,31 @@ a
     margin-left: 5%;
 }
 
-.R
-{
+.R {
     text-align: center;
     margin-top: 15%;
 }
 
-.medalla
-{
+.medalla {
     background-color: var(--fondoheader--);
     border: 3px solid var(--letras--);
     align-items: center;
 }
 
-.med
-{
+.med {
     width: 15vh;
     height: 15vh;
 }
 
-.cuadroRetos
-{
+.cuadroRetos {
     margin-left: 15%;
     margin-top: 5%;
 }
 
-.cuadroRetos2
-{
+.cuadroRetos2 {
     margin-left: 5%;
 }
 
-.rectanguloReto
-{
+.rectanguloReto {
     margin-bottom: 5%;
 }

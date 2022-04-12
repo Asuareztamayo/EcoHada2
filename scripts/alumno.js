@@ -30,7 +30,7 @@ let consejos = [
     "Utilitza recipents de vidre, en comptes dels de plàstic.",
     "No llencis qualsevol líquid pel desguàs, l'aigua es contamina molt fàcilment.",
     "Si vas de passeig, recorda't d'emportar-te les restes.",
-    "Sabies que laigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
+    "Sabies que l`aigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
 ];
 
 home.addEventListener("click", () => {
