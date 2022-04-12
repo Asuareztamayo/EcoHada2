@@ -36,6 +36,9 @@ let profe;
         document.getElementById("apProfe").innerHTML+= profe.lastName;
         document.getElementById("emailProfe").innerHTML+= profe.email;
         document.getElementById("contraProfe").innerHTML+= profe.password;
+        // for (let i = 0; i < retosbd.length; i++){
+        // document.getElementById("cursos").innerHTML += `<button class="grups"><b>${profe.cursos}</b></button>`
+        // }
         sessionStorage.setItem("profe", profe);
         await fetch(`http://localhost:8080/curso/profesor${id}`)
         .then(res => res.json())
