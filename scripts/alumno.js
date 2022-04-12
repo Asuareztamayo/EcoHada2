@@ -10,6 +10,7 @@ let mainJuego = document.getElementById("mainJuegoExtra");
 let irRetos = document.getElementById("retosActuales");
 let irTerminados = document.getElementById("retosCompletos");
 let retoVoluntario = document.getElementById("retosVoluntarios");
+let contraseña = document.getElementById("contraseña");
 let consejos = [
     "Separa les escombraries.",
     "Apaga els llums.",
@@ -32,6 +33,8 @@ let consejos = [
     "Si vas de passeig, recorda't d'emportar-te les restes.",
     "Sabies que laigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
 ];
+
+contraseña.addEventListener("click", verCambiarContraseña );
 
 home.addEventListener("click", () => {
     irPrincipal();
@@ -201,6 +204,7 @@ let cambioConsejo = setInterval(footer, 5000);
 
 // alumno insignias
 async function insignias() {
+    //creamos y cargamos los datos iniciales 
     let arrayi = alumno.insigneas;
     let insignias = [];
     let oro = [];
@@ -215,6 +219,8 @@ async function insignias() {
         .then(response => {
             insignias = response
         });
+        //creamos y cargamos los datos iniciales 
+        // asignamos al countador la cantidad de medallas que hay de cada tipo oro-plata-bronce
     for (let index = 0; index < insignias.length; index++) {
         if (insignias[index].xp == 50) {
             countador[0] += 1;
@@ -224,6 +230,8 @@ async function insignias() {
             countador[2] += 1;
         }
     }
+    // asignamos al countador la cantidad de medallas que hay de cada tipo oro-plata-bronce
+    //difrencia las medallas del alumno en cada tipooro-plata-bronce
     for (let index = 0; index < arrayi.length; index++) {
         if (arrayi[index].xp == 50) {
             oro.push(arrayi[index].img);
@@ -232,8 +240,9 @@ async function insignias() {
         } else {
             bronce.push(arrayi[index].img);
         }
-
     }
+    //difrencia las medallas del alumno en cada tipooro-plata-bronce
+    //coloca las insignias de los alumnos y agrega insignias con signo de pregunta para rellenar el total de insignias
     for (let index = 0; index < 3; index++) {
         let aux = 0;
         if (index == 0) {
@@ -255,6 +264,8 @@ async function insignias() {
         }
 
     }
+    //coloca las insignias de los alumnos y agrega insignias con signo de pregunta para rellenar el total de insignias
+    //imprime el resultado
     console.log(oro);
     console.log(plata);
     console.log(bronce);
@@ -279,5 +290,33 @@ async function insignias() {
         }
 
     }
+        //imprime el resultado
+}
+
+// cambio de contraseña
+
+function cambiarContraseña(){
+    let c1 = document.getElementById('cambio1').value;
+    let c2 = document.getElementById('cambio2').value;
+    if(c1 == c2){
+        alert("las contraseñas coinciden");
+        if(c1 == alumno.password){
+            alert("la contraseña no puede ser igual a la anterior");
+        }else{
+                     
+            fetch("")
+        }
+    }else{
+        alert("las contraseñas no coinciden");
+    }
+}
+
+function verCambiarContraseña(){
+    mainRetos.style.display = "none";
+    mainIndividual.style.display = "none";
+    mainHecho.style.display = "none";
+    mainJuego.style.display = "none";
+    mainPrincipal.style.display = "none";
+    document.getElementById("mainCambiarContraseña").style.display="block";
 
 }
