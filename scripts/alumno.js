@@ -172,7 +172,7 @@ function verRetoIndividual(idReto) {
     if (mainIndividual.style.display == "none") {
         mainIndividual.style.display = "block";
     }
-    console.log(idReto)
+    
     document.getElementById("retoActual").innerHTML = `<div class="d-flex justify-content-center nomReto">
     <h2>${idReto}</h2>
 </div>
