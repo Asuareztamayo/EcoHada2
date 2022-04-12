@@ -6,13 +6,15 @@ let mainPrincipal = document.getElementById("principalAlumno");
 let mainRetos = document.getElementById("mainRetosActuales");
 let mainIndividual = document.getElementById("mainRetoIndividual");
 let mainHecho = document.getElementById("mainRetosHechos");
+let mainJuego = document.getElementById("mainJuegoExtra");
 let irRetos = document.getElementById("retosActuales");
 let irTerminados = document.getElementById("retosCompletos");
+let retoVoluntario = document.getElementById("retosVoluntarios");
 let consejos = [
     "Separa les escombraries.",
     "Apaga els llums.",
     "Desendolla el que no s'estigui fent servir.",
-    "Tanca tancament les aixetes.",
+    "Tanca correctament les aixetes.",
     "Utilitza bosses reutilitzables.",
     "Utilitza bombetes LED.",
     "Reutilitza.",
@@ -22,6 +24,13 @@ let consejos = [
     "Utilitza el transport públic.",
     "Porta els medicaments caducats a la farmàcia.",
     "Aneu caminant sempre que pugueu.",
+    "Tanca la aixeta quan et rentis els dents.",
+    "Estableix un temps de dutxa.",
+    "Surt mes a donar una volta, utilitza menys la tecología.",
+    "Utilitza recipents de vidre, en comptes dels de plàstic.",
+    "No llencis qualsevol líquid pel desguàs, l'aigua es contamina molt fàcilment.",
+    "Si vas de passeig, recorda't d'emportar-te les restes.",
+    "Sabies que laigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
 ];
 
 home.addEventListener("click", () => {
@@ -33,6 +42,9 @@ irRetos.addEventListener("click", () => {
 irTerminados.addEventListener("click", () => {
     verRetosTerminados();
 });
+retoVoluntario.addEventListener("click", ()=>{
+    verRetoVoluntario();
+})
 // retoIndividual.addEventListener("click", () => {
 // //  verRetoIndividual();
 // });
@@ -120,19 +132,12 @@ function verRetoAlumno() {
 }
 
 function irPrincipal() {
-    if (mainRetos.style.display == "block") {
-        mainRetos.style.display = "none";
+    mainRetos.style.display = "none";
+    mainIndividual.style.display = "none";
+    mainHecho.style.display = "none";
+    mainJuego.style.display = "none";
+    mainPrincipal.style.display = "block";
     }
-    if (mainIndividual.style.display == "block") {
-        mainIndividual.style.display = "none";
-    }
-    if (mainHecho.style.display == "block") {
-        mainHecho.style.display = "none";
-    }
-    if (mainPrincipal.style.display == "none") {
-        mainPrincipal.style.display = "block";
-    }
-}
 
 function verRetos() {
     if (mainPrincipal.style.display == "block") {
@@ -142,7 +147,14 @@ function verRetos() {
         mainRetos.style.display = "block";
     }
 }
-
+function verRetoVoluntario(){
+    if (mainPrincipal.style.display == "block") {
+        mainPrincipal.style.display = "none";
+    }
+    if (mainJuego.style.display == "none") {
+        mainJuego.style.display = "block";
+    }
+}
 
 function verRetosTerminados() {
     if (mainPrincipal.style.display == "block") {
