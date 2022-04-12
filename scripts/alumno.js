@@ -195,7 +195,7 @@ async function insignias() {
     let plata = [];
     let bronce = [];
     let countador = [0, 0, 0];
-    let ifaltante = ["https://ibb.co/r3cBHT7", "https://ibb.co/x8k8fNL", "https://ibb.co/W2dKQX8"];
+    let ifaltante = ["https://i.ibb.co/ypYzqGf/Medallaorofaltante-removebg-preview.png", "https://i.ibb.co/h161ZS9/Medallaplatafaltante-removebg-preview.png", "https://i.ibb.co/JsbkNT6/Medallabroncefaltante-removebg-preview.png"];
     await fetch("http://localhost:8080/insignia/findall")
 
         .then(res => res.json())
@@ -212,8 +212,6 @@ async function insignias() {
             countador[2] += 1;
         }
     }
-    console.log(countador);
-    console.log(bronce);
     for (let index = 0; index < arrayi.length; index++) {
         if (arrayi[index].xp == 50) {
             oro.push(arrayi[index].img);
@@ -248,4 +246,26 @@ async function insignias() {
     console.log(oro);
     console.log(plata);
     console.log(bronce);
+    for (let index = 0; index < 3; index++) {
+        let aux = 0;
+        if(index == 0){
+            aux = oro.length;
+        }else if(index == 1){
+            aux = plata.length;
+        }else{
+            aux = bronce.length;
+        }
+        for (let index2 = 0; index2 < aux; index2++) {
+            if(index == 0){
+               document.getElementById("oro").innerHTML += `<img src="${oro[index2]}" alt="Medalla" border="0" style="width:220px;" >`;
+            }else if(index == 1){
+                document.getElementById("plata").innerHTML += `<img src="${oro[index2]}" alt="Medalla" border="0" style="width:220px;">`;
+            }else{
+                document.getElementById("bronce").innerHTML += `<img src="${bronce[index2]}" alt="Medalla" border="0" style="width:220px;" >`;
+            }
+            
+        }
+
+    }
+
 }
