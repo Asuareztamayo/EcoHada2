@@ -1,44 +1,38 @@
-:root
-{
-    --fondomain--:#F5F2CD;
-    --fondoheader-- :#9FC131;
+:root {
+    --fondomain--: #F5F2CD;
+    --fondoheader--: #9FC131;
     --letras--: #005c53;
-    --fondotablas-- : #D6D58E;
+    --fondotablas--: #D6D58E;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
 
-header,footer
-{
+header,
+footer {
     background-color: var(--fondoheader--);
 }
 
-footer
-{
+footer {
     position: absolute;
     bottom: 0px;
     width: 100%;
 }
 
-a
-{
+a {
     text-decoration: none !important;
     color: black !important;
 }
 
-.main
-{
+.main {
     background-color: var(--fondomain--);
     height: 80vh;
 }
 
-.logoR
-{
+.logoR {
     transform: scaleX(-1);
 }
 
-.grups
-{
+.grups {
     padding: 5% 37% 5% 37%;
     font-size: 20px;
     background-color: var(--fondoheader--);
@@ -46,31 +40,27 @@ a
     margin-top: 5%;
 }
 
-.grups:active
-{
+.grups:active {
     padding: 5% 37% 5% 37%;
     font-size: 20px;
     background-color: var(--letras--);
-    color:#ffffff;
+    color: #ffffff;
     border: 3px solid var(--letras--);
     margin-top: 5%;
 }
 
-.div1
-{
+.div1 {
     margin-top: 15%;
     margin-left: 10%;
 }
 
-.div2
-{
+.div2 {
     margin-top: 7%;
     margin-right: 10%;
     padding-left: 25%;
 }
 
-.cuadroInfo
-{
+.cuadroInfo {
     width: 40vh;
     height: 7vh;
     background-color: var(--fondoheader--);
@@ -80,82 +70,68 @@ a
     align-items: center;
 }
 
-.infoBotones
-{
+.infoBotones {
     margin-left: 15%;
     margin-right: 5%;
 }
 
-.botonG
-{
+.botonG {
     margin-left: 20%;
 }
 
-.icono
-{
+.icono {
     margin-left: 3px;
     margin-right: 3px;
 }
 
-.perf
-{
+.perf {
     height: 80vh;
     width: 150vh;
 }
 
-.cuadroAl
-{
+.cuadroAl {
     border: 3px solid black;
     margin-right: 2%;
     width: 17vh;
 }
 
-.sepa
-{
+.sepa {
     margin-left: 10%;
 }
 
-.alumns
-{
+.alumns {
     margin-top: 15%;
     margin-left: 5%;
 }
 
-.reptes
-{
+.reptes {
     margin-top: 15%;
     margin-left: 5%;
 }
 
-.listAl
-{
+.listAl {
     margin-top: 5%;
 }
 
-.listAl2
-{
+.listAl2 {
     padding-right: 25px;
 }
 
-.listAl3
-{
+.listAl3 {
     padding-right: 20px;
     padding-left: 20px;
 }
 
-.listAl4
-{
+.listAl4 {
     margin-top: 10%;
 }
 
-.aluNom
-{
+.aluNom {
     margin-top: 5%;
     margin-left: 5%;
 }
 
-.reto
-{
+.reto {
     width: 40vh;
     height: 16vh;
     background-color: var(--fondoheader--);
@@ -163,60 +139,51 @@ a
     margin-left: 5%;
 }
 
-.R
-{
+.R {
     text-align: center;
     margin-top: 15%;
 }
 
-.medalla
-{
+.medalla {
     background-color: var(--fondoheader--);
     border: 3px solid var(--letras--);
     align-items: center;
 }
 
-.med
-{
+.med {
     width: 15vh;
     height: 15vh;
 }
 
-.cuadroRetos
-{
+.cuadroRetos {
     margin-left: 15%;
     margin-top: 5%;
 }
 
-.cuadroRetos2
-{
+.cuadroRetos2 {
     margin-left: 5%;
 }
 
-.rectanguloReto
-{
+.rectanguloReto {
     margin-bottom: 5%;
 }
 
-.nouGrup
-{
+.nouGrup {
     background-color: var(--fondoheader--);
     border: 3px solid var(--letras--);
-    width:400px;
+    width: 400px;
     align-items: center;
 }
 
-.nouGrup2
-{
+.nouGrup2 {
     background-color: var(--fondoheader--);
     border: 3px solid var(--letras--);
     margin-left: 3%;
-    width:750px;
+    width: 750px;
     align-items: center;
 }
 
-.nouGrup3
-{
+.nouGrup3 {
     background-color: var(--fondoheader--);
     border-left: 3px solid var(--letras--);
     border-bottom: none;
@@ -228,35 +195,30 @@ a
     outline: none;
 }
 
-.cung
-{
+.cung {
     margin-left: 5%;
     margin-right: 7%;
 }
 
-.ndg
-{
+.ndg {
     margin-left: 3%;
-    margin-right: 3%; 
+    margin-right: 3%;
 }
 
-.creaGrup
-{
+.creaGrup {
     margin-top: 5%;
     margin-left: 5%;
 }
 
-.nouGrup4
-{
+.nouGrup4 {
     background-color: var(--fondoheader--);
     border: 3px solid var(--letras--);
-    width:1092px;
+    width: 1092px;
     align-items: center;
     margin-top: 3%;
 }
 
-.nouGrup5
-{
+.nouGrup5 {
     background-color: var(--fondoheader--);
     border-left: 3px solid var(--letras--);
     border-bottom: none;
@@ -268,39 +230,33 @@ a
     outline: none;
 }
 
-.nouAlumne
-{
+.nouAlumne {
     margin-top: 3%;
 }
 
-.nouAlumne2
-{
+.nouAlumne2 {
     background-color: var(--fondoheader--);
     border: 3px solid var(--letras--);
     width: 50%;
     height: 50%;
 }
 
-.nouAlumne3
-{
+.nouAlumne3 {
     margin-top: 3%;
     margin-left: 5%;
     margin-right: 5%;
 }
 
-.nouAlumne4
-{
+.nouAlumne4 {
     width: 25%;
     height: 50%;
 }
 
-.saveAll
-{
+.saveAll {
     margin-left: 15%;
 }
 
-.grups2
-{
+.grups2 {
     padding: 5% 20% 5% 20%;
     font-size: 20px;
     background-color: var(--fondoheader--);
@@ -308,12 +264,11 @@ a
     margin-top: 25%;
 }
 
-.grups2:active
-{
+.grups2:active {
     padding: 5% 20% 5% 20%;
     font-size: 20px;
     background-color: var(--letras--);
-    color:#ffffff;
+    color: #ffffff;
     border: 3px solid var(--letras--);
     margin-top: 25%;
 }
