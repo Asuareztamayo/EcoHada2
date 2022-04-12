@@ -2,7 +2,7 @@ let email;
 let entrar2;
 let id = 1;
 
-async function acceder (){
+    async function acceder (){
     email = document.getElementById("email").value;
     entrar2 = document.getElementById("entrar2").value;
     let a = email.substring(0,6);
