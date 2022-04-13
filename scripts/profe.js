@@ -22,30 +22,32 @@ let consejos = [
 ];
 //funcion para reconocer al profesor
 let profe;
-        let cursos;
-        document.addEventListener("DOMContentLoaded", async function () {
-        let id = sessionStorage.getItem("id");
-        await fetch(`http://localhost:8080/profesor/find${id}`)
+let cursos;
+document.addEventListener("DOMContentLoaded", async function () {
+    let id = sessionStorage.getItem("id");
+    await fetch(`http://localhost:8080/profesor/find${id}`)
         .then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => {
-        profe= response});
-        console.log(profe);
-        document.getElementById('nProfe').innerHTML += " " + profe.name;
-        document.getElementById("nomProfe").innerHTML+= profe.name;
-        document.getElementById("apProfe").innerHTML+= profe.lastName;
-        document.getElementById("emailProfe").innerHTML+= profe.email;
-        document.getElementById("contraProfe").innerHTML+= profe.password;
-        // for (let i = 0; i < retosbd.length; i++){
-        // document.getElementById("cursos").innerHTML += `<button class="grups"><b>${profe.cursos}</b></button>`
-        // }
-        sessionStorage.setItem("profe", profe);
-        await fetch(`http://localhost:8080/curso/profesor${id}`)
+            profe = response
+        });
+    console.log(profe);
+    document.getElementById('nProfe').innerHTML += " " + profe.name;
+    document.getElementById("nomProfe").innerHTML += profe.name;
+    document.getElementById("apProfe").innerHTML += profe.lastName;
+    document.getElementById("emailProfe").innerHTML += profe.email;
+    document.getElementById("contraProfe").innerHTML += profe.password;
+    // for (let i = 0; i < retosbd.length; i++){
+    // document.getElementById("cursos").innerHTML += `<button class="grups"><b>${profe.cursos}</b></button>`
+    // }
+    sessionStorage.setItem("profe", profe);
+    await fetch(`http://localhost:8080/curso/profesor${id}`)
         .then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => {
-        cursos= response});
-        console.log(cursos);
+            cursos = response
+        });
+    console.log(cursos);
 });
 // fin funcion para reconocer al profesor
 

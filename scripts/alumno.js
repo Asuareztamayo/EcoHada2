@@ -9,7 +9,6 @@ let mainHecho = document.getElementById("mainRetosHechos");
 let mainJuego = document.getElementById("mainJuegoExtra");
 let irRetos = document.getElementById("retosActuales");
 let irTerminados = document.getElementById("retosCompletos");
-let retoVoluntario = document.getElementById("retosVoluntarios");
 let contraseña = document.getElementById("contraseña");
 let consejos = [
     "Separa les escombraries.",
@@ -45,12 +44,6 @@ irRetos.addEventListener("click", () => {
 irTerminados.addEventListener("click", () => {
     verRetosTerminados();
 });
-retoVoluntario.addEventListener("click", ()=>{
-    verRetoVoluntario();
-})
-// retoIndividual.addEventListener("click", () => {
-// //  verRetoIndividual();
-// });
 
 //funcion inicial para cargar datos
 document.addEventListener("DOMContentLoaded", async function () {
@@ -70,6 +63,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     insignias();
 });
 //funcion inicial para cargar datos
+
 
 function asignarlvl() {
     document.getElementById("categoria");
@@ -138,7 +132,6 @@ function irPrincipal() {
     mainRetos.style.display = "none";
     mainIndividual.style.display = "none";
     mainHecho.style.display = "none";
-    mainJuego.style.display = "none";
     mainPrincipal.style.display = "block";
     }
 
@@ -148,14 +141,6 @@ function verRetos() {
     }
     if (mainRetos.style.display == "none") {
         mainRetos.style.display = "block";
-    }
-}
-function verRetoVoluntario(){
-    if (mainPrincipal.style.display == "block") {
-        mainPrincipal.style.display = "none";
-    }
-    if (mainJuego.style.display == "none") {
-        mainJuego.style.display = "block";
     }
 }
 
