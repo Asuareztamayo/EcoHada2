@@ -1,3 +1,7 @@
+let principalProfe = document.getElementById("principalProfe");
+let mainCrearGrupo = document.getElementById("mainCrearGrupo");
+let irCrearCurso = document.getElementById("irCrearCurso");
+let home = document.getElementById("home");
 let consejos = [
     "Separa les escombraries.",
     "Apaga els llums.",
@@ -20,6 +24,16 @@ let consejos = [
     "Si vas de passeig, recorda't d'emportar-te les restes.",
     "Sabies que l`aigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
 ];
+
+//Eventos
+home.addEventListener("click", ()=>{
+    irPrincipal();
+})
+irCrearCurso.addEventListener("click", ()=>{
+    vistaCrearCurso();
+});
+
+
 //funcion para reconocer al profesor
 let profe;
 let cursos;
@@ -51,9 +65,28 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 // fin funcion para reconocer al profesor
 
+
+//Función para cambiar la vista principal a vista crear nuevo grupo.
+function vistaCrearCurso(){
+    if(principalProfe.style.display == "block"){
+        principalProfe.style.display ="none";
+    }
+    if (mainCrearGrupo.style.display == "none"){
+        mainCrearGrupo.style.display = "block";
+    }
+}
+
+//Función para volver a la página principal desde cualquier otra vista.
+function irPrincipal(){
+    mainCrearGrupo.style.display = "none";
+    principalProfe.style.display = "block";
+}
+
+//Función que permite el footer dinamico con los consejos.
 function footer() {
     let verConsejo = consejos[Math.floor(Math.random() * consejos.length)];
     document.getElementById("footer").innerHTML = verConsejo;
 }
 
+//Función de tiempo que hace que cada 5 segundos cambie el consejo del footer.
 let cambioConsejo = setInterval(footer, 5000);
