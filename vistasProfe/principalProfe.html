@@ -16,7 +16,9 @@
             <div class="container-fluid justify-content-around">
                 <h3 id="nProfe">Hola</h3>
                 <img src="../img/logo.PNG" alt="logo">
-                <span id="home" class="iconify" data-icon="ant-design:home-outlined" data-width="60">
+                <button id="home" class="btnHeader">
+                <span class="iconify" data-icon="ant-design:home-outlined" data-width="60">
+                </button>
             </div>
         </nav>
     </header> 
@@ -25,16 +27,16 @@
         <section class="d-flex flex-row">
                 <div class="div1">
                     <div class="d-flex flex-column align-items-space-around m-2">
-                        <div class="d-flex flex-row curso">
+                        <div class="d-flex f-row align-items-center">
                             <span class="iconify" data-icon="fluent:animal-rabbit-20-regular" data-width="80"></span>
                             <h4>Crea un nou curs</h4>
                         </div>
                         <div class="info">
                             <h3>DADES PERSONALS</h3>
-                            <h4>-Nom: Cucufate</h4>
-                            <h4>-Cognom: Antoniez</h4>
-                            <h4>-E-mail: pep@escola.com</h4>
-                            <h4>-Contrasenya: ******</h4>
+                            <h4>-Nom: <span id="nomProfe"></span></h4>
+                            <h4>-Cognom: <span id="apProfe"></span></h4>
+                            <h4>-E-mail: <span id="emailProfe"></span></h4>
+                            <h4>-Contrasenya: <span id="contraProfe"></span></h4>
                         </div>
                     </div>
                 </div>
@@ -44,7 +46,7 @@
                         <h5>GRUPS</h5>
                         <span class="iconify logoR" data-icon="fluent:animal-rabbit-20-regular" data-width="80"></span>
                     </div>
-                    <div class="display-flex flex-column align-items-space-around">
+                    <div class="display-flex flex-column align-items-space-around" id="cursos">
                         <button class="grups"><b>GRUP X</b></button>
                         <button class="grups"><b>GRUP X</b></button>
                         <button class="grups"><b>GRUP X</b></button>

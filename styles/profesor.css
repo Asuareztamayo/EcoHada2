@@ -20,7 +20,10 @@
     height: 8vh;
 }
 
-
+.btnHeader{
+    background-color: var(--fondoheader--);
+    border: var(--fondoheader--);
+}
 .main {
     background-color: var(--fondomain--);
     min-height: 80vh;
