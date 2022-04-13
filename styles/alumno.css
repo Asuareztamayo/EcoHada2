@@ -28,6 +28,10 @@ a{
     height: 8vh;
 }
 
+.btnHeader{
+    background-color: var(--fondoheader--);
+    border: var(--fondoheader--);
+}
 /* Vista principal */
 .dodo{
     margin-top: 15%;

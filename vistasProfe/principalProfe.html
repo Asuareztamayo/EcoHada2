@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="cat">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/profesor.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>EcoHada Profe</title>
-    <link rel="icon" type="image/png" href="../img/hadasinfondo.png">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/profesor.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <title>EcoHada Profe</title>
+        <link rel="icon" type="image/png" href="../img/hadasinfondo.png">
+    </head>
 
 <body>
     <header class="header">
@@ -16,10 +16,13 @@
             <div class="container-fluid justify-content-around">
                 <h3 id="nProfe">Hola</h3>
                 <img src="../img/logo.PNG" alt="logo">
-                <span id="home" class="iconify" data-icon="ant-design:home-outlined" data-width="60">
+                <button id="home" class="btnHeader">
+                <span class="iconify" data-icon="ant-design:home-outlined" data-width="60">
+                </button>
             </div>
         </nav>
-    </header>    
+    </header> 
+    
     <main class="main" id="principalProfe" style="display:block;">
         <section class="d-flex flex-row">
                 <div class="div1">
@@ -250,7 +253,7 @@
             </div>
         </section>
     </main>
-    <main class="main" id="principalProfe" style="display:none;">
+    <main class="main" id="repteAlumnesProfe" style="display:none;">
         <section class="d-flex flex-row">
             <div>
                 <div class="aluNom">
@@ -313,6 +316,96 @@
             </div>
         </section>
     </main>
+    <main class="main" id="crearGrupoProfe" style="display:none;">
+        <section class="d-flex flex-row">
+            <div>
+                <div class="d-flex flex-column creaGrup">
+                    <div class="d-flex flex-row align-items-space-around">
+                        <div class="d-flex flex-row align-items-space-around nouGrup" >
+                            <h4 class="cung">CREAR UN NOU GRUP</h4>
+                            <span class="iconify iconito" data-icon="ant-design:plus-circle-outlined" data-width="50"></span>
+                        </div>
+                        <div class="d-flex flex-row nouGrup2">
+                            <h4 class="ndg">NOM DEL GRUP</h4>
+                            <input type="text" id="inicial" value="" class="nouGrup3"/>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="d-flex flex-row nouGrup4">
+                            <h4 class="ndg">AFEGIR UN NOU ALUMNE</h4>
+                            <input type="text" id="inicial" value="" class="nouGrup5"/>
+                            <span class="iconify" data-icon="fluent:arrow-enter-left-24-regular" data-width="45"></span>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row nouAlumne">
+                        <div class="d-flex flex-row nouAlumne2">
+                            <div class="d-flex flex-column nouAlumne4">
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                            </div>
+                            <div class="d-flex flex-column nouAlumne4">
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                                <div class="d-flex flex-row nouAlumne3">
+                                    <h5>-Alumne</h5>
+                                    <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column saveAll">
+                            <button class="grups2"><b>DESCARREGAR EXCEL</b></button>
+                            <button class="grups2"><b>DESAR</b></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
     <footer class="footer">
         <nav class="navbar">
             <div class="container-fluid justify-content-around">
@@ -325,6 +418,5 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/2/2.2.0/iconify.min.js"></script>
-
 </body>
 </html>
