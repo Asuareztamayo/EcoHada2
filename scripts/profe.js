@@ -1,29 +1,53 @@
-let consejos = [
-  "Separa les escombraries.",
-  "Apaga els llums.",
-  "Desendolla el que no s'estigui fent servir.",
-  "Tanca correctament les aixetes.",
-  "Utilitza bosses reutilitzables.",
-  "Utilitza bombetes LED.",
-  "Reutilitza.",
-  "Evita utilitzar piles.",
-  "Evita els aerosols.",
-  "Consumeix productes de temporada.",
-  "Utilitza el transport públic.",
-  "Porta els medicaments caducats a la farmàcia.",
-  "Aneu caminant sempre que pugueu.",
-  "Tanca la aixeta quan et rentis els dents.",
-  "Estableix un temps de dutxa.",
-  "Surt mes a donar una volta, utilitza menys la tecología.",
-  "Utilitza recipents de vidre, en comptes dels de plàstic.",
-  "No llencis qualsevol líquid pel desguàs, l'aigua es contamina molt fàcilment.",
-  "Si vas de passeig, recorda't d'emportar-te les restes.",
+let consejos = ["Separa les escombraries.","Apaga els llums.","Desendolla el que no s'estigui fent servir.",
+    "Tanca correctament les aixetes.","Utilitza bosses reutilitzables.","Utilitza bombetes LED.","Reutilitza.","Evita utilitzar piles.",
+  "Evita els aerosols.","Consumeix productes de temporada.","Utilitza el transport públic.","Porta els medicaments caducats a la farmàcia.",
+  "Aneu caminant sempre que pugueu.","Tanca la aixeta quan et rentis els dents.","Estableix un temps de dutxa.",
+  "Surt mes a donar una volta, utilitza menys la tecología.","Utilitza recipents de vidre, en comptes dels de plàstic.",
+  "No llencis qualsevol líquid pel desguàs, l'aigua es contamina molt fàcilment.","Si vas de passeig, recorda't d'emportar-te les restes.",
   "Sabies que l`aigua de bullir es pot utilitzar per regar plantes? fins i tot és millor.",
 ];
-//funcion para reconocer al profesor
 let profe;
 let cursos = [];
 let alumnos = [];
+let principalProfe = document.getElementById("principalProfe");
+let crearGrupoProfe = document.getElementById("crearGrupoProfe");
+let irCrearCurso = document.getElementById("irCrearCurso");
+let home = document.getElementById("home");
+
+//Eventos
+home.addEventListener("click", ()=>{
+    irPrincipal();
+})
+irCrearCurso.addEventListener("click", ()=>{
+    vistaCrearCurso();
+});
+
+//Función para cambiar la vista principal a vista crear nuevo grupo.
+function vistaCrearCurso(){
+    if(principalProfe.style.display == "block"){
+        principalProfe.style.display ="none";
+    }
+    if (crearGrupoProfe.style.display == "none"){
+        crearGrupoProfe.style.display = "block";
+    }
+}
+
+//Función para volver a la página principal desde cualquier otra vista.
+function irPrincipal(){
+    document.getElementById('perfilProfe').style.display="none";
+    principalProfe.style.display = "block";
+    crearGrupoProfe.style.display = "none";
+}
+
+//Función que permite el footer dinamico con los consejos.
+function footer() {
+    let verConsejo = consejos[Math.floor(Math.random() * consejos.length)];
+    document.getElementById("footer").innerHTML = verConsejo;
+}
+//Función de tiempo que hace que cada 5 segundos cambie el consejo del footer.
+let cambioConsejo = setInterval(footer, 5000);
+
+// funcion para reconocer al profesor
 document.addEventListener("DOMContentLoaded", async function () {
   let id = sessionStorage.getItem("id");
   await fetch(`http://localhost:8080/profesor/find${id}`)
@@ -52,16 +76,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     ).innerHTML += `<button class="grups" onclick="abrircurso(${i})" style="width:200px;"><b>${cursos[i].name}</b></button>`;
   }
 });
-// fin funcion para reconocer al profesor
-
-function footer() {
-  let verConsejo = consejos[Math.floor(Math.random() * consejos.length)];
-  document.getElementById("footer").innerHTML = verConsejo;
-}
-
-let cambioConsejo = setInterval(footer, 5000);
-
+// funcion para reconocer al profesor
+//carga un curso 
 async function abrircurso(index) {
+    document.getElementById('perfilProfe').style.display="block";
+    document.getElementById('principalProfe').style.display="none";
   document.getElementById("holas").innerHTML = cursos[index].name;
   await fetch(`http://localhost:8080/curso/alumno${cursos[index].id}`)
     .then((res) => res.json())
@@ -75,20 +94,25 @@ async function abrircurso(index) {
   for (let i = 1; i < alumnos.length + 1; i++) {
     if (i % 2 == 0) {
       document.getElementById("listAlumnos").innerHTML += `<div class="d-flex f-row">
+      <button onclick="verAlumno(${i-1})" style="background:transparent; width:250px; heigth:10px;">
             <h5 class="listAl2">${
               alumnos[i - 1].lastName + " " + alumnos[i - 1].name
             }</h5>
-            <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
-            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25"></span>
+        </button>
             </div>`;
     } else {
       document.getElementById("listAlumnos2").innerHTML += `<div class="d-flex f-row">
+      <button onclick="verAlumno(${i-1})" style="background:transparent; width:250px; heigth:10px;">
             <h5 class="listAl2">${
               alumnos[i - 1].lastName + " " + alumnos[i - 1].name
             }</h5>
-            <span class="iconify" data-icon="bx:pencil" data-width="25"></span>
-            <span class="iconify" data-icon="carbon:user-avatar-filled-alt" data-width="25"></span>
+        </button>
             </div>`;
     }
   }
+}
+//carga un curso 
+
+function verAlumno(i){
+
 }

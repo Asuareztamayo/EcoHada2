@@ -1,43 +1,14 @@
+//Variables necesarias en varias partes del código
 let alumno;
 let retosbd;
 let idReto = document.getElementById("idReto");
-let home = document.getElementById("home");
-let mainPrincipal = document.getElementById("principalAlumno");
-let mainRetos = document.getElementById("mainRetosActuales");
-let mainIndividual = document.getElementById("mainRetoIndividual");
-let mainHecho = document.getElementById("mainRetosHechos");
-let mainJuego = document.getElementById("mainJuegoExtra");
+let contraseña = document.getElementById("contraseña");
 let irRetos = document.getElementById("retosActuales");
 let irTerminados = document.getElementById("retosCompletos");
-let contraseña = document.getElementById("contraseña");
-let consejos = [
-    "Separa les escombraries.",
-    "Apaga els llums.",
-    "Desendolla el que no s'estigui fent servir.",
-    "Tanca correctament les aixetes.",
-    "Utilitza bosses reutilitzables.",
-    "Utilitza bombetes LED.",
-    "Reutilitza.",
-    "Evita utilitzar piles.",
-    "Evita els aerosols.",
-    "Consumeix productes de temporada.",
-    "Utilitza el transport públic.",
-    "Porta els medicaments caducats a la farmàcia.",
-    "Aneu caminant sempre que pugueu.",
-    "Tanca la aixeta quan et rentis els dents.",
-    "Estableix un temps de dutxa.",
-    "Surt mes a donar una volta, utilitza menys la tecología.",
-    "Utilitza recipents de vidre, en comptes dels de plàstic.",
-    "No llencis qualsevol líquid pel desguàs, l'aigua es contamina molt fàcilment.",
-    "Si vas de passeig, recorda't d'emportar-te les restes.",
-    "Sabies que l`aigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
-];
 
-contraseña.addEventListener("click", verCambiarContraseña );
+//Eventos
+contraseña.addEventListener("click", verCambiarContraseña);
 
-home.addEventListener("click", () => {
-    irPrincipal();
-});
 irRetos.addEventListener("click", () => {
     verRetos();
 });
@@ -65,6 +36,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 //funcion inicial para cargar datos
 
 
+//Función para asignar el nivel del alumno
 function asignarlvl() {
     document.getElementById("categoria");
     let lvls = [
@@ -98,7 +70,7 @@ function asignarlvl() {
             document.getElementById(
                 "categoria"
             ).innerHTML += `<img style="width: 250px; height:300px;" src="${lvls[index]
-            }" alt="Lvl" border="0">
+                }" alt="Lvl" border="0">
                     <div class="d-flex flex-column">
                         <h3>${subt[index]}</h3>
                         <h5>Te faltan ${(index + 1) * 100 - 50 - alumno.xp
@@ -110,6 +82,7 @@ function asignarlvl() {
     }
 }
 
+//Acceso a los retos mandados por el profesor
 function verRetoAlumno() {
     let retos = document.getElementById("retos");
     retosbd = alumno.tareas;
@@ -128,44 +101,7 @@ function verRetoAlumno() {
     }
 }
 
-function irPrincipal() {
-    mainRetos.style.display = "none";
-    mainIndividual.style.display = "none";
-    mainHecho.style.display = "none";
-    mainPrincipal.style.display = "block";
-    document.getElementById("mainCambiarContraseña").style.display="none";
-    }
-
-function verRetos() {
-    if (mainPrincipal.style.display == "block") {
-        mainPrincipal.style.display = "none";
-    }
-    if (mainRetos.style.display == "none") {
-        mainRetos.style.display = "block";
-    }
-    document.getElementById("mainCambiarContraseña").style.display="none";
-}
-function verRetoVoluntario(){
-    if (mainPrincipal.style.display == "block") {
-        mainPrincipal.style.display = "none";
-    }
-    if (mainJuego.style.display == "none") {
-        mainJuego.style.display = "block";
-    }
-    document.getElementById("mainCambiarContraseña").style.display="none";
-}
-
-
-function verRetosTerminados() {
-    if (mainPrincipal.style.display == "block") {
-        mainPrincipal.style.display = "none";
-    }
-    if (mainHecho.style.display == "none") {
-        mainHecho.style.display = "block";
-    }
-    document.getElementById("mainCambiarContraseña").style.display="none";
-}
-
+//Poder ver mas información sobre un reto en específico.
 function verRetoIndividual(idReto) {
     if (mainRetos.style.display == "block") {
         mainRetos.style.display = "none";
@@ -173,53 +109,48 @@ function verRetoIndividual(idReto) {
     if (mainIndividual.style.display == "none") {
         mainIndividual.style.display = "block";
     }
-    document.getElementById("mainCambiarContraseña").style.display="none";
-    
     document.getElementById("retoActual").innerHTML = `<div class="d-flex justify-content-center nomReto">
     <h2>${idReto}</h2>
 </div>
 <div class="d-flex flex-row descripcion">
     <div class="col-6">
-        <h4 class="m-1">${retosbd[idReto -1].text}</h4>
+        <h4 class="m-1">${retosbd[idReto - 1].text}</h4>
     </div>
     <div class="col-6 d-flex flex-column justify-content-center valorInsignia">
         <div class="d-flex justify-content-center insignia">
-            <img src="${retosbd[idReto -1].insignea.img}" alt="${retosbd[idReto -1].insignea.text}"
+            <img src="${retosbd[idReto - 1].insignea.img}" alt="${retosbd[idReto - 1].insignea.text
+        }"
                 border="0" class="mb-5">
         </div>
         <div class="d-flex justify-content-center">
-            <h1 class="mt-3">${retosbd[idReto-1].insignea.xp} Punts</h1>
+            <h1 class="mt-3">${retosbd[idReto - 1].insignea.xp} Punts</h1>
         </div>
     </div>
-</div>`
+</div>`;
 }
 
-function footer() {
-    let verConsejo = consejos[Math.floor(Math.random() * consejos.length)];
-    document.getElementById("footer").innerHTML = verConsejo;
-}
-
-let cambioConsejo = setInterval(footer, 5000);
-
-// alumno insignias
+// Acceso a las insignias que tiene un alumno
 async function insignias() {
-    //creamos y cargamos los datos iniciales 
+    //creamos y cargamos los datos iniciales
     let arrayi = alumno.insigneas;
     let insignias = [];
     let oro = [];
     let plata = [];
     let bronce = [];
     let countador = [0, 0, 0];
-    let ifaltante = ["https://i.ibb.co/ypYzqGf/Medallaorofaltante-removebg-preview.png", "https://i.ibb.co/h161ZS9/Medallaplatafaltante-removebg-preview.png", "https://i.ibb.co/JsbkNT6/Medallabroncefaltante-removebg-preview.png"];
+    let ifaltante = [
+        "https://i.ibb.co/ypYzqGf/Medallaorofaltante-removebg-preview.png",
+        "https://i.ibb.co/h161ZS9/Medallaplatafaltante-removebg-preview.png",
+        "https://i.ibb.co/JsbkNT6/Medallabroncefaltante-removebg-preview.png",
+    ];
     await fetch("http://localhost:8080/insignia/findall")
-
-        .then(res => res.json())
-        .catch(error => console.error('Error:', error))
-        .then(response => {
-            insignias = response
+        .then((res) => res.json())
+        .catch((error) => console.error("Error:", error))
+        .then((response) => {
+            insignias = response;
         });
-        //creamos y cargamos los datos iniciales 
-        // asignamos al countador la cantidad de medallas que hay de cada tipo oro-plata-bronce
+    //creamos y cargamos los datos iniciales
+    // asignamos al countador la cantidad de medallas que hay de cada tipo oro-plata-bronce
     for (let index = 0; index < insignias.length; index++) {
         if (insignias[index].xp == 50) {
             countador[0] += 1;
@@ -245,11 +176,11 @@ async function insignias() {
     for (let index = 0; index < 3; index++) {
         let aux = 0;
         if (index == 0) {
-            aux = (countador[index] - oro.length);
+            aux = countador[index] - oro.length;
         } else if (index == 1) {
-            aux = (countador[index] - plata.length);
+            aux = countador[index] - plata.length;
         } else {
-            aux = (countador[index] - bronce.length);
+            aux = countador[index] - bronce.length;
         }
         for (let index2 = 0; index2 < aux; index2++) {
             if (index == 0) {
@@ -259,9 +190,7 @@ async function insignias() {
             } else {
                 bronce.push(ifaltante[index]);
             }
-
         }
-
     }
     //coloca las insignias de los alumnos y agrega insignias con signo de pregunta para rellenar el total de insignias
     //imprime el resultado
@@ -270,61 +199,64 @@ async function insignias() {
     console.log(bronce);
     for (let index = 0; index < 3; index++) {
         let aux = 0;
-        if(index == 0){
+        if (index == 0) {
             aux = oro.length;
-        }else if(index == 1){
+        } else if (index == 1) {
             aux = plata.length;
-        }else{
+        } else {
             aux = bronce.length;
         }
         for (let index2 = 0; index2 < aux; index2++) {
-            if(index == 0){
-               document.getElementById("oro").innerHTML += `<img src="${oro[index2]}" alt="Medalla" border="0" style="width:220px;" >`;
-            }else if(index == 1){
-                document.getElementById("plata").innerHTML += `<img src="${oro[index2]}" alt="Medalla" border="0" style="width:220px;">`;
-            }else{
-                document.getElementById("bronce").innerHTML += `<img src="${bronce[index2]}" alt="Medalla" border="0" style="width:220px;" >`;
+            if (index == 0) {
+                document.getElementById(
+                    "oro"
+                ).innerHTML += `<img src="${oro[index2]}" alt="Medalla" border="0" style="width:220px;" >`;
+            } else if (index == 1) {
+                document.getElementById(
+                    "plata"
+                ).innerHTML += `<img src="${oro[index2]}" alt="Medalla" border="0" style="width:220px;">`;
+            } else {
+                document.getElementById(
+                    "bronce"
+                ).innerHTML += `<img src="${bronce[index2]}" alt="Medalla" border="0" style="width:220px;" >`;
             }
-            
         }
-
     }
-        //imprime el resultado
+    //imprime el resultado
 }
 
-// cambio de contraseña
-
-async function cambiarContraseña(){
+// Función que permite el cambio de contraseña
+async function cambiarContraseña() {
     let id = parseInt(alumno.id);
-    let c1 = document.getElementById('cambio1').value;
-    let c2 = document.getElementById('cambio2').value;
-    if(c1 == c2){
+    let c1 = document.getElementById("cambio1").value;
+    let c2 = document.getElementById("cambio2").value;
+    if (c1 == c2) {
         alert("las contraseñas coinciden");
-        if(c1 == alumno.password){
+        if (c1 == alumno.password) {
             alert("la contraseña no puede ser igual a la anterior");
-        }else{
-            const data = JSON.stringify({id:alumno.id , password: c1});
+        } else {
+            const data = JSON.stringify({ id: alumno.id, password: c1 });
             console.log(data);
             await fetch("http://localhost:8080/alumno/editarContraseña", {
                 headers: {
-                    'Content-Type': 'application/json'
-                  },
-                  method: "POST",
-                  body: data
-              }).then(res => res.json())
-              .catch(error => console.error('Error:', error))
-              .then((response) => console.log(response));
+                    "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: data,
+            })
+                .then((res) => res.json())
+                .catch((error) => console.error("Error:", error))
+                .then((response) => console.log(response));
         }
-    }else{
+    } else {
         alert("las contraseñas no coinciden");
     }
 }
 
-function verCambiarContraseña(){
+function verCambiarContraseña() {
     mainRetos.style.display = "none";
     mainIndividual.style.display = "none";
     mainHecho.style.display = "none";
     mainPrincipal.style.display = "none";
-    document.getElementById("mainCambiarContraseña").style.display="block";
-
+    document.getElementById("mainCambiarContraseña").style.display = "block";
 }
