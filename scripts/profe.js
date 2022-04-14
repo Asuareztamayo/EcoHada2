@@ -1,7 +1,3 @@
-let principalProfe = document.getElementById("principalProfe");
-let mainCrearGrupo = document.getElementById("mainCrearGrupo");
-let irCrearCurso = document.getElementById("irCrearCurso");
-let home = document.getElementById("home");
 let consejos = [
     "Separa les escombraries.",
     "Apaga els llums.",
@@ -42,6 +38,7 @@ let principalProfe = document.getElementById("principalProfe");
 let crearGrupoProfe = document.getElementById("crearGrupoProfe");
 let irCrearCurso = document.getElementById("irCrearCurso");
 let home = document.getElementById("home");
+let mainCrearGrupo = document.getElementById("mainCrearGrupo");
 
 
 //Función para cambiar la vista principal a vista crear nuevo grupo.
