@@ -1,3 +1,4 @@
+//Variables necesarias en varias partes del código
 let alumno;
 let retosbd;
 let idReto = document.getElementById("idReto");
@@ -5,6 +6,7 @@ let contraseña = document.getElementById("contraseña");
 let irRetos = document.getElementById("retosActuales");
 let irTerminados = document.getElementById("retosCompletos");
 
+//Eventos
 contraseña.addEventListener("click", verCambiarContraseña);
 
 irRetos.addEventListener("click", () => {
@@ -33,6 +35,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 //funcion inicial para cargar datos
 
+
+//Función para asignar el nivel del alumno
 function asignarlvl() {
     document.getElementById("categoria");
     let lvls = [
@@ -78,6 +82,7 @@ function asignarlvl() {
     }
 }
 
+//Acceso a los retos mandados por el profesor
 function verRetoAlumno() {
     let retos = document.getElementById("retos");
     retosbd = alumno.tareas;
@@ -96,6 +101,7 @@ function verRetoAlumno() {
     }
 }
 
+//Poder ver mas información sobre un reto en específico.
 function verRetoIndividual(idReto) {
     if (mainRetos.style.display == "block") {
         mainRetos.style.display = "none";
@@ -123,7 +129,7 @@ function verRetoIndividual(idReto) {
 </div>`;
 }
 
-// alumno insignias
+// Acceso a las insignias que tiene un alumno
 async function insignias() {
     //creamos y cargamos los datos iniciales
     let arrayi = alumno.insigneas;
@@ -219,8 +225,7 @@ async function insignias() {
     //imprime el resultado
 }
 
-// cambio de contraseña
-
+// Función que permite el cambio de contraseña
 async function cambiarContraseña() {
     let id = parseInt(alumno.id);
     let c1 = document.getElementById("cambio1").value;

@@ -1,9 +1,12 @@
+//Variables llamando elementos del HTML
 let home = document.getElementById("home");
 let mainPrincipal = document.getElementById("principalAlumno");
 let mainRetos = document.getElementById("mainRetosActuales");
 let mainIndividual = document.getElementById("mainRetoIndividual");
 let mainHecho = document.getElementById("mainRetosHechos");
 let mainJuego = document.getElementById("mainJuegoExtra");
+
+//Array con los consejos que se imprimiran en el Footer.
 let consejos = [
     "Separa les escombraries.",
     "Apaga els llums.",
@@ -27,10 +30,12 @@ let consejos = [
     "Sabies que l`aigua de bullir es pot utilitzar per regar plantes? fins i tot és millor.",
 ];
 
+//Evento para volver a la vista principal
 home.addEventListener("click", () => {
     irPrincipal();
 });
 
+//Volver a la vista principal
 function irPrincipal() {
     mainRetos.style.display = "none";
     mainIndividual.style.display = "none";
@@ -38,6 +43,7 @@ function irPrincipal() {
     mainPrincipal.style.display = "block";
 }
 
+//Cambio de main para ver los retos
 function verRetos() {
     if (mainPrincipal.style.display == "block") {
         mainPrincipal.style.display = "none";
@@ -47,6 +53,7 @@ function verRetos() {
     }
 }
 
+//Cambio de main para ver las medallas conseguidas
 function verRetosTerminados() {
     if (mainPrincipal.style.display == "block") {
         mainPrincipal.style.display = "none";
@@ -56,6 +63,7 @@ function verRetosTerminados() {
     }
 }
 
+//Función que nos permite el footer dinámico, cambiando con los objetos dentro de un array
 function footer() {
     let verConsejo = consejos[Math.floor(Math.random() * consejos.length)];
     document.getElementById("footer").innerHTML = verConsejo;
