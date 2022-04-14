@@ -7,7 +7,7 @@ let id = 1;
     entrar2 = document.getElementById("entrar2").value;
     let a = email.substring(0,6);
     let r;
-    if("alumno" == a){
+    if("alumne" == a){
         await fetch(`http://localhost:8080/alumno/iniciarSesion?email=${email}&&password=${entrar2}`, {
             method: 'POST',
             headers:{
