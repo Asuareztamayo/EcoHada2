@@ -1,18 +1,29 @@
-let consejos = ["Separa les escombraries.","Apaga els llums.","Desendolla el que no s'estigui fent servir.",
-    "Tanca correctament les aixetes.","Utilitza bosses reutilitzables.","Utilitza bombetes LED.","Reutilitza.","Evita utilitzar piles.",
-  "Evita els aerosols.","Consumeix productes de temporada.","Utilitza el transport públic.","Porta els medicaments caducats a la farmàcia.",
-  "Aneu caminant sempre que pugueu.","Tanca la aixeta quan et rentis els dents.","Estableix un temps de dutxa.",
-  "Surt mes a donar una volta, utilitza menys la tecología.","Utilitza recipents de vidre, en comptes dels de plàstic.",
-  "No llencis qualsevol líquid pel desguàs, l'aigua es contamina molt fàcilment.","Si vas de passeig, recorda't d'emportar-te les restes.",
-  "Sabies que l`aigua de bullir es pot utilitzar per regar plantes? fins i tot és millor.",
-];
-let profe;
-let cursos = [];
-let alumnos = [];
 let principalProfe = document.getElementById("principalProfe");
-let crearGrupoProfe = document.getElementById("crearGrupoProfe");
+let mainCrearGrupo = document.getElementById("mainCrearGrupo");
 let irCrearCurso = document.getElementById("irCrearCurso");
 let home = document.getElementById("home");
+let consejos = [
+    "Separa les escombraries.",
+    "Apaga els llums.",
+    "Desendolla el que no s'estigui fent servir.",
+    "Tanca correctament les aixetes.",
+    "Utilitza bosses reutilitzables.",
+    "Utilitza bombetes LED.",
+    "Reutilitza.",
+    "Evita utilitzar piles.",
+    "Evita els aerosols.",
+    "Consumeix productes de temporada.",
+    "Utilitza el transport públic.",
+    "Porta els medicaments caducats a la farmàcia.",
+    "Aneu caminant sempre que pugueu.",
+    "Tanca la aixeta quan et rentis els dents.",
+    "Estableix un temps de dutxa.",
+    "Surt mes a donar una volta, utilitza menys la tecología.",
+    "Utilitza recipents de vidre, en comptes dels de plàstic.",
+    "No llencis qualsevol líquid pel desguàs, l'aigua es contamina molt fàcilment.",
+    "Si vas de passeig, recorda't d'emportar-te les restes.",
+    "Sabies que l`aigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
+];
 
 //Eventos
 home.addEventListener("click", ()=>{
@@ -22,21 +33,31 @@ irCrearCurso.addEventListener("click", ()=>{
     vistaCrearCurso();
 });
 
+
+//funcion para reconocer al profesor
+let profe;
+let cursos = [];
+let alumnos = [];
+let principalProfe = document.getElementById("principalProfe");
+let crearGrupoProfe = document.getElementById("crearGrupoProfe");
+let irCrearCurso = document.getElementById("irCrearCurso");
+let home = document.getElementById("home");
+
+
 //Función para cambiar la vista principal a vista crear nuevo grupo.
 function vistaCrearCurso(){
     if(principalProfe.style.display == "block"){
         principalProfe.style.display ="none";
     }
-    if (crearGrupoProfe.style.display == "none"){
-        crearGrupoProfe.style.display = "block";
+    if (mainCrearGrupo.style.display == "none"){
+        mainCrearGrupo.style.display = "block";
     }
 }
 
 //Función para volver a la página principal desde cualquier otra vista.
 function irPrincipal(){
-    document.getElementById('perfilProfe').style.display="none";
+    mainCrearGrupo.style.display = "none";
     principalProfe.style.display = "block";
-    crearGrupoProfe.style.display = "none";
 }
 
 //Función que permite el footer dinamico con los consejos.
