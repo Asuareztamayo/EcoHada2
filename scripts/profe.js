@@ -22,7 +22,7 @@ let consejos = [
 ];
 //funcion para reconocer al profesor
 let profe;
-let cursos;
+let cursos = [];
 document.addEventListener("DOMContentLoaded", async function () {
     let id = sessionStorage.getItem("id");
     await fetch(`http://localhost:8080/profesor/find${id}`)
@@ -37,9 +37,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById("apProfe").innerHTML += profe.lastName;
     document.getElementById("emailProfe").innerHTML += profe.email;
     document.getElementById("contraProfe").innerHTML += profe.password;
-    // for (let i = 0; i < retosbd.length; i++){
-    // document.getElementById("cursos").innerHTML += `<button class="grups"><b>${profe.cursos}</b></button>`
-    // }
     sessionStorage.setItem("profe", profe);
     await fetch(`http://localhost:8080/curso/profesor${id}`)
         .then(res => res.json())
@@ -48,6 +45,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             cursos = response
         });
     console.log(cursos);
+    for (let i = 0; i < cursos.length; i++){
+        document.getElementById("cursos").innerHTML += `<button class="grups" onclick="abrircurso(${i})" style="width:200px;"><b>${cursos[i].name}</b></button>`
+       }
 });
 // fin funcion para reconocer al profesor
 
@@ -57,3 +57,7 @@ function footer() {
 }
 
 let cambioConsejo = setInterval(footer, 5000);
+
+function abrircurso(index) {
+    document.getElementById("holas").innerHTML = cursos[index].name;
+}
