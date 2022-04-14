@@ -140,6 +140,7 @@ function irPrincipal() {
     mainHecho.style.display = "none";
     mainJuego.style.display = "none";
     mainPrincipal.style.display = "block";
+    document.getElementById("mainCambiarContraseña").style.display="none";
     }
 
 function verRetos() {
@@ -149,6 +150,7 @@ function verRetos() {
     if (mainRetos.style.display == "none") {
         mainRetos.style.display = "block";
     }
+    document.getElementById("mainCambiarContraseña").style.display="none";
 }
 function verRetoVoluntario(){
     if (mainPrincipal.style.display == "block") {
@@ -157,6 +159,7 @@ function verRetoVoluntario(){
     if (mainJuego.style.display == "none") {
         mainJuego.style.display = "block";
     }
+    document.getElementById("mainCambiarContraseña").style.display="none";
 }
 
 function verRetosTerminados() {
@@ -166,6 +169,7 @@ function verRetosTerminados() {
     if (mainHecho.style.display == "none") {
         mainHecho.style.display = "block";
     }
+    document.getElementById("mainCambiarContraseña").style.display="none";
 }
 
 function verRetoIndividual(idReto) {
@@ -175,6 +179,7 @@ function verRetoIndividual(idReto) {
     if (mainIndividual.style.display == "none") {
         mainIndividual.style.display = "block";
     }
+    document.getElementById("mainCambiarContraseña").style.display="none";
     
     document.getElementById("retoActual").innerHTML = `<div class="d-flex justify-content-center nomReto">
     <h2>${idReto}</h2>
@@ -295,7 +300,8 @@ async function insignias() {
 
 // cambio de contraseña
 
-function cambiarContraseña(){
+async function cambiarContraseña(){
+    let id = parseInt(alumno.id);
     let c1 = document.getElementById('cambio1').value;
     let c2 = document.getElementById('cambio2').value;
     if(c1 == c2){
@@ -303,8 +309,17 @@ function cambiarContraseña(){
         if(c1 == alumno.password){
             alert("la contraseña no puede ser igual a la anterior");
         }else{
-                     
-            fetch("")
+            const data = JSON.stringify({id:alumno.id , password: c1});
+            console.log(data);
+            await fetch("http://localhost:8080/alumno/editarContraseña", {
+                headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  method: "POST",
+                  body: data
+              }).then(res => res.json())
+              .catch(error => console.error('Error:', error))
+              .then((response) => console.log(response));
         }
     }else{
         alert("las contraseñas no coinciden");
