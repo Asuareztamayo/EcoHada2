@@ -110,10 +110,6 @@ a {
     margin-left: 5%;
 }
 
-.reptes {
-    margin-top: 15%;
-    margin-left: 5%;
-}
 
 .listAl {
     margin-top: 5%;
@@ -277,4 +273,19 @@ a {
     color: #ffffff;
     border: 3px solid var(--letras--);
     margin-top: 25%;
+}
+
+.cardAlumno{
+    border: solid 2px var(--fondoheader--);
+    background-color: var(--fondotablas--);
+
+}
+
+.cardCerrarAlumno{
+    border: var(--fondotablas--);
+    background-color: var(--fondotablas--);
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
 }
