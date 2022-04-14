@@ -324,7 +324,6 @@ function verCambiarContraseña(){
     mainRetos.style.display = "none";
     mainIndividual.style.display = "none";
     mainHecho.style.display = "none";
-    mainJuego.style.display = "none";
     mainPrincipal.style.display = "none";
     document.getElementById("mainCambiarContraseña").style.display="block";
 
