@@ -102,3 +102,44 @@ a{
     justify-content: center;
     align-items: center;
 }
+
+.con1
+{
+    background-color: var(--fondotablas--);
+    border: 3px solid var(--letras--);
+    height: 74px;
+    width: 460px;
+    font-size: 30px;
+    outline: none;
+}
+
+.cambi1 {
+    padding: 2% 2% 2% 2%;
+    font-size: 20px;
+    background-color: var(--fondoheader--);
+    border: 3px solid var(--letras--);
+}
+
+.cambi1:active {
+    padding: 2% 2% 2% 2%;
+    font-size: 20px;
+    background-color: var(--letras--);
+    color: #ffffff;
+    border: 3px solid var(--letras--);
+}
+
+.contra1
+{
+    margin-left: 30%;
+    margin-top:10%;
+}
+
+.laContra1
+{
+    margin-bottom: 2%;
+}
+
+.laContra2
+{
+    margin-top: 3%;
+}
