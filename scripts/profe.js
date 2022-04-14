@@ -13,6 +13,7 @@ let principalProfe = document.getElementById("principalProfe");
 let crearGrupoProfe = document.getElementById("crearGrupoProfe");
 let irCrearCurso = document.getElementById("irCrearCurso");
 let home = document.getElementById("home");
+let cardAlumno = document.getElementById("cardAlumno");
 
 //Eventos
 home.addEventListener("click", ()=>{
@@ -107,12 +108,26 @@ async function abrircurso(index) {
               alumnos[i - 1].lastName + " " + alumnos[i - 1].name
             }</h5>
         </button>
-            </div>`;
+        </div>`;
     }
   }
 }
 //carga un curso 
 
 function verAlumno(i){
-
+  let tareas = alumnos[i].tareas;
+  document.getElementById("nombreA").innerHTML = alumnos[i].name + " " + alumnos[i].lastName;
+  for (let index = 0; index < tareas.length; index++) {
+    document.getElementById("retosAlumnos").innerHTML += `
+    <div class="d-flex f-row">
+    <h6> -${tareas[index].text}</h6>
+    <div class="d-flex flex-row" style="justify-content: space-evently;">
+    <button class="cardCerrarAlumno"><span class="iconify" data-icon="ic:outline-done" style="color: green;"
+            data-width="30"></span></button>
+    <button class="cardCerrarAlumno"><span class="iconify" data-icon="akar-icons:cross" style="color: red;"
+            data-width="30"></span></button>
+        </div>
+</div>
+    `;
+  }
 }
