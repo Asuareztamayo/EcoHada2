@@ -1,0 +1,38 @@
+:root{
+    --fondomain-- : #F5F2CD ;
+    --fondoheader-- :#9FC131;
+    --letras--: #005c53;
+    --fondotablas-- : #D6D58E;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background: var(--fondomain--);
+    background: linear-gradient(180deg, var(--fondomain--) 0%, var(--fondotablas--) 40%, var(--fondomain--) 100%);
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+h1 {
+    text-align: center;
+    margin: 2rem;
+    color: var(--letras--);
+    text-shadow: 2px 2px 2px var(--fondoheader--);
+}
+
+div{
+    display: flex;
+    justify-content: center;
+}
+
+.newGame {   
+    cursor: pointer;
+    background: linear-gradient(rgb(0, 255, 85), rgb(0, 255, 115));
+    padding: 20px;
+    border-radius: 50px;
+    border: white 5px solid;
+    font-size: 130%;
+    text-align: center;
+    box-shadow: 3px 3px 16px rgb(0, 0, 0, 0.6);
+}

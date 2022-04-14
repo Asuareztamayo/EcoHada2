@@ -9,7 +9,6 @@ let mainHecho = document.getElementById("mainRetosHechos");
 let mainJuego = document.getElementById("mainJuegoExtra");
 let irRetos = document.getElementById("retosActuales");
 let irTerminados = document.getElementById("retosCompletos");
-let retoVoluntario = document.getElementById("retosVoluntarios");
 let contraseña = document.getElementById("contraseña");
 let consejos = [
     "Separa les escombraries.",
@@ -31,7 +30,7 @@ let consejos = [
     "Utilitza recipents de vidre, en comptes dels de plàstic.",
     "No llencis qualsevol líquid pel desguàs, l'aigua es contamina molt fàcilment.",
     "Si vas de passeig, recorda't d'emportar-te les restes.",
-    "Sabies que laigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
+    "Sabies que l`aigua de bullir es pot utilitzar per regar plantes? fins i tot és millor."
 ];
 
 contraseña.addEventListener("click", verCambiarContraseña );
@@ -45,12 +44,6 @@ irRetos.addEventListener("click", () => {
 irTerminados.addEventListener("click", () => {
     verRetosTerminados();
 });
-retoVoluntario.addEventListener("click", ()=>{
-    verRetoVoluntario();
-})
-// retoIndividual.addEventListener("click", () => {
-// //  verRetoIndividual();
-// });
 
 //funcion inicial para cargar datos
 document.addEventListener("DOMContentLoaded", async function () {
@@ -70,6 +63,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     insignias();
 });
 //funcion inicial para cargar datos
+
 
 function asignarlvl() {
     document.getElementById("categoria");
@@ -138,7 +132,6 @@ function irPrincipal() {
     mainRetos.style.display = "none";
     mainIndividual.style.display = "none";
     mainHecho.style.display = "none";
-    mainJuego.style.display = "none";
     mainPrincipal.style.display = "block";
     document.getElementById("mainCambiarContraseña").style.display="none";
     }
@@ -162,6 +155,7 @@ function verRetoVoluntario(){
     document.getElementById("mainCambiarContraseña").style.display="none";
 }
 
+o
 function verRetosTerminados() {
     if (mainPrincipal.style.display == "block") {
         mainPrincipal.style.display = "none";
