@@ -106,7 +106,6 @@ function verRetoIndividual(idReto) {
     if (mainIndividual.style.display == "none") {
         mainIndividual.style.display = "block";
     }
-
     document.getElementById("retoActual").innerHTML = `<div class="d-flex justify-content-center nomReto">
     <h2>${idReto}</h2>
 </div>
@@ -219,16 +218,26 @@ async function insignias() {
 
 // cambio de contraseña
 
-function cambiarContraseña() {
+async function cambiarContraseña(){
+    let id = parseInt(alumno.id);
     let c1 = document.getElementById('cambio1').value;
     let c2 = document.getElementById('cambio2').value;
     if (c1 == c2) {
         alert("las contraseñas coinciden");
         if (c1 == alumno.password) {
             alert("la contraseña no puede ser igual a la anterior");
-        } else {
-
-            fetch("")
+        }else{
+            const data = JSON.stringify({id:alumno.id , password: c1});
+            console.log(data);
+            await fetch("http://localhost:8080/alumno/editarContraseña", {
+                headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  method: "POST",
+                  body: data
+              }).then(res => res.json())
+              .catch(error => console.error('Error:', error))
+              .then((response) => console.log(response));
         }
     } else {
         alert("las contraseñas no coinciden");
@@ -239,7 +248,6 @@ function verCambiarContraseña() {
     mainRetos.style.display = "none";
     mainIndividual.style.display = "none";
     mainHecho.style.display = "none";
-    mainJuego.style.display = "none";
     mainPrincipal.style.display = "none";
     document.getElementById("mainCambiarContraseña").style.display = "block";
 
