@@ -155,7 +155,7 @@ function verRetoVoluntario(){
     document.getElementById("mainCambiarContraseña").style.display="none";
 }
 
-o
+
 function verRetosTerminados() {
     if (mainPrincipal.style.display == "block") {
         mainPrincipal.style.display = "none";
