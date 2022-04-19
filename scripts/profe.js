@@ -116,18 +116,36 @@ async function abrircurso(index) {
 
 function verAlumno(i){
   let tareas = alumnos[i].tareas;
+  document.getElementById("retosAlumnos").innerHTML = ""; 
   document.getElementById("nombreA").innerHTML = alumnos[i].name + " " + alumnos[i].lastName;
+
   for (let index = 0; index < tareas.length; index++) {
+    console.log("InsigniaId:",tareas[index].insignea.id,"TareaId:",tareas[index].id,"AlumnoId:",alumnos[i].id);
     document.getElementById("retosAlumnos").innerHTML += `
     <div class="d-flex f-row">
     <h6> -${tareas[index].text}</h6>
     <div class="d-flex flex-row" style="justify-content: space-evently;">
     <button class="cardCerrarAlumno"><span class="iconify" data-icon="ic:outline-done" style="color: green;"
-            data-width="30"></span></button>
+            data-width="30" onclick="asignarInsignia(${tareas[index].insignea.id},${tareas[index].id},${alumnos[i].id})"></span></button>
     <button class="cardCerrarAlumno"><span class="iconify" data-icon="akar-icons:cross" style="color: red;"
-            data-width="30"></span></button>
+            data-width="30" onclick="eliminarTarea(${alumnos[i].id,tareas[index].id})"></span></button>
         </div>
 </div>
     `;
   }
+}
+
+async function asignarInsignia(idInsignia,idTarea,idAlumno){
+  const data = JSON.parse({ insignea: idInsignia, tarea: idTarea, alumno: idAlumno});
+  console.log(data);
+ await fetch("http://localhost:8080/alumno/asignarInsignea", {
+    headers: {
+        "Content-Type": "application/json",
+    },
+    method: "POST",
+    body: data,
+})
+    .then((res) => res.json())
+    .catch((error) => console.error("Error:", error))
+    .then((response) => console.log(response));
 }
