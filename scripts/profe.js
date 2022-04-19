@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   for (let i = 0; i < cursos.length; i++) {
     document.getElementById(
       "cursos"
-    ).innerHTML += `<button class="grups" onclick="abrircurso(${i})" style="width:200px;"><b>${cursos[i].name}</b></button>`;
+    ).innerHTML += `<button class="grups" onclick="abrircurso(${i})" style="width:300px; height: 60px;"><h3>${cursos[i].name}</h3></button>`;
   }
 });
 // funcion para reconocer al profesor

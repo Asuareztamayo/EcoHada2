@@ -27,7 +27,7 @@ a{
     }
 
     .eslogan {
-    color: var(--fondoheader--);
+    color: var(--letras--);
     font-size: medium;
     margin-left: 3%;
     }

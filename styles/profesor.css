@@ -39,7 +39,6 @@ a {
 }
 
 .grups {
-    padding: 5% 37% 5% 37%;
     font-size: 20px;
     background-color: var(--fondoheader--);
     border: 3px solid var(--letras--);
@@ -61,10 +60,10 @@ a {
 }
 
 .div2 {
-    margin-top: 7%;
-    margin-right: 10%;
-    padding-left: 25%;
+    margin-top: 14%;
+    margin-left: 15%;
 }
+
 
 .cuadroInfo {
     width: 40vh;

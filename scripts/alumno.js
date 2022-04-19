@@ -109,12 +109,14 @@ function verRetoIndividual(idReto) {
     if (mainIndividual.style.display == "none") {
         mainIndividual.style.display = "block";
     }
+    console.log(retosbd[idReto - 1]);
     document.getElementById("retoActual").innerHTML = `<div class="d-flex justify-content-center nomReto">
-    <h2>${idReto}</h2>
+    <h2>ECO-HADA</h2>
 </div>
 <div class="d-flex flex-row descripcion">
-    <div class="col-6">
+    <div class="col-6" style="text-aling:center;">
         <h4 class="m-1">${retosbd[idReto - 1].text}</h4>
+        <img src="${retosbd[idReto - 1].img}" style="width:250px; heigth: 250px; margin:40px;" alt="">
     </div>
     <div class="col-6 d-flex flex-column justify-content-center valorInsignia">
         <div class="d-flex justify-content-center insignia">
@@ -139,9 +141,9 @@ async function insignias() {
     let bronce = [];
     let countador = [0, 0, 0];
     let ifaltante = [
-        "https://i.ibb.co/ypYzqGf/Medallaorofaltante-removebg-preview.png",
-        "https://i.ibb.co/h161ZS9/Medallaplatafaltante-removebg-preview.png",
-        "https://i.ibb.co/JsbkNT6/Medallabroncefaltante-removebg-preview.png",
+        "https://ibb.co/dkPTrn4",
+        "https://ibb.co/bK4VY3f",
+        "https://ibb.co/CJJqmnP",
     ];
     await fetch("http://localhost:8080/insignia/findall")
         .then((res) => res.json())
@@ -214,7 +216,7 @@ async function insignias() {
             } else if (index == 1) {
                 document.getElementById(
                     "plata"
-                ).innerHTML += `<img src="${oro[index2]}" alt="Medalla" border="0" style="width:220px;">`;
+                ).innerHTML += `<img src="${plata[index2]}" alt="Medalla" border="0" style="width:220px;">`;
             } else {
                 document.getElementById(
                     "bronce"

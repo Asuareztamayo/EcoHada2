@@ -143,3 +143,18 @@ a{
 {
     margin-top: 3%;
 }
+@media (min-width: 1200px) {
+    .logo{
+        width: 25%;
+    }
+
+    .slider{
+        width: 60%;
+        margin-left: 15%;
+    }
+
+    .dodo{
+        margin-top: 5%;
+    }
+
+}

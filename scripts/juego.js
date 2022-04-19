@@ -47,7 +47,7 @@ class Memorama {
             
 
             card.dataset.image = image;
-            imgLabel.src = `/img/${image}.png`;
+            imgLabel.src = `../img/${image}.png`;
 
         }
 

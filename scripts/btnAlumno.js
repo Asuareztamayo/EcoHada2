@@ -40,6 +40,7 @@ function irPrincipal() {
     mainRetos.style.display = "none";
     mainIndividual.style.display = "none";
     mainHecho.style.display = "none";
+    document.getElementById('mainCambiarContraseña').style.display = "none";
     mainPrincipal.style.display = "block";
 }
 
