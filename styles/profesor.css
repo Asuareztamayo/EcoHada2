@@ -110,10 +110,6 @@ a {
     margin-left: 5%;
 }
 
-.reptes {
-    margin-top: 15%;
-    margin-left: 5%;
-}
 
 .listAl {
     margin-top: 5%;
@@ -278,6 +274,7 @@ a {
     border: 3px solid var(--letras--);
     margin-top: 25%;
 }
+
 .cardAlumno{
     border: solid 2px var(--fondoheader--);
     background-color: var(--fondotablas--);

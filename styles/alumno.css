@@ -103,6 +103,24 @@ a{
     align-items: center;
 }
 
+
+@media (min-width: 1200px) {
+    .logo{
+        width: 25%;
+    }
+
+    .slider{
+        width: 60%;
+        margin-left: 15%;
+    }
+
+    .dodo{
+        margin-top: 5%;
+    }
+
+}
+    
+
 .con1
 {
     background-color: var(--fondotablas--);
@@ -143,3 +161,4 @@ a{
 {
     margin-top: 3%;
 }
+
