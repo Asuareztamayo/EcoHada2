@@ -131,9 +131,21 @@
         <div id="bronce" class="scrollmenu" style="display: flex; height: 220px;" ></div>
     </main>
     <main class="main" id="mainCambiarContraseña" style="display: none;">
-        <input type="text" placeholder="Escriba la contraseña" id="cambio1"> <br>
-        <input type="text" placeholder="Repita la contraseña" id="cambio2"> <br>
-        <button onclick="cambiarContraseña()">Guardar cambios</button>
+        <section class="d-flex flex-row">
+            <div class="contra1">
+                <div>
+                    <div class="laContra1">
+                        <input type="text" placeholder="Escriba la contraseña" id="cambio1" class="con1"> <br>
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Repita la contraseña" id="cambio2" class="con1"> <br>
+                    </div>
+                </div>
+                <div class="laContra2">
+                    <button onclick="cambiarContraseña()" class="cambi1">Guardar cambios</button>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="footer">
         <nav class="navbar">
